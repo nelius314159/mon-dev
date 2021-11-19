@@ -1,3 +1,3 @@
 # mon-dev
 
-# Repo to contain dev for frogfoot monitoring toolkit.
+# Repo of dev for frogfoot monitoring toolkit.
