@@ -17,6 +17,7 @@ $tag = "CXNK000CE9D9";
 $curl = curl_init();
 curl_setopt_array($curl, array(
 			       CURLOPT_URL => "https://iris.frogfoot.net/iris/api2/api/graphs?search.graphtype=snipsLatency&search.basetag.like=%25".$tag."%25",
+//			       CURLOPT_URL => "https://iris-dev.frogfoot.net/iris/api2/api/graphs?search.graphtype=snipsLatency&search.basetag.like=%25".$tag."%25",
 			       CURLOPT_RETURNTRANSFER => TRUE,
 			       CURLOPT_ENCODING => '',
 			       CURLOPT_MAXREDIRS => 10,
@@ -25,6 +26,7 @@ curl_setopt_array($curl, array(
 			       CURLOPT_SSL_VERIFYPEER => FALSE,
 			       CURLOPT_FOLLOWLOCATION => TRUE,
 			       CURLOPT_USERPWD, "nelius@frogfoot.com:zB3ekyPU",
+//			       CURLOPT_USERPWD, "nelius@frogfoot.com:Jy0x[w0G-A",			       			       
 			       CURLOPT_CUSTOMREQUEST => 'GET'
 			       )
 		  );
@@ -33,7 +35,6 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
-
 
 
 
