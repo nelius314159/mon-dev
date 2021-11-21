@@ -11,7 +11,7 @@
 #jq -r '.data[] | "\(.hostname) \(.poller_a) \(.poller_b)"')
 
 
-# iris-dev
+# iris-dev - orig
 #curl --silent --location --globoff --request GET 'http://iris-dev.frogfoot.net/iris/api2/api/devices' \
 #--user 'nelius@frogfoot.com:Jy0x[w0G-A' \
 #--data-urlencode 'search={"deleted":0,"hostname":{"like":"%-lts%"}}' | \
@@ -25,8 +25,15 @@
 #jq -r '.data[] | "\(.hostname) \(.poller_a) \(.poller_b)"'
 
 
+## iris-dev
+#curl --silent --location --globoff --request GET 'http://iris-dev.frogfoot.net/iris/api2/api/devices' \
+#--user 'nelius@frogfoot.com:Jy0x[w0G-A' \
+#--data-urlencode 'search={"deleted":0,"hostname":{"like":"%-lts%"}}' | \
+#jq -r '.data[] | "\(.hostname) \(.poller_a) \(.poller_b)"'
+
+
 # iris-dev
-curl --silent --location --globoff --request GET 'http://iris-dev.frogfoot.net/iris/api2/api/devices' \
---user 'nelius@frogfoot.com:Jy0x[w0G-A' \
---data-urlencode 'search={"deleted":0,"hostname":{"like":"%-lts%"}}' 
+curl --silent --location --globoff --request GET 'http://iris-dev.frogfoot.net/iris/api2/api/alarms' 
+#jq -r '.data[] | "\(.hostname) \(.poller_a) \(.poller_b)"'
+
 

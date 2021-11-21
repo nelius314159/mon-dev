@@ -1,20 +1,35 @@
 <?php
 
-//echo 'Curl: ', function_exists('curl_version') ? 'Enabled' : 'Disabled';
-//die;
 
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+			         CURLOPT_URL => 'http://iris-dev.frogfoot.net/iris/api2/api/alarms',
+			         CURLOPT_RETURNTRANSFER => true,
+			         CURLOPT_ENCODING => '',
+			         CURLOPT_MAXREDIRS => 10,
+			         CURLOPT_TIMEOUT => 0,
+			         CURLOPT_FOLLOWLOCATION => true,
+			         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			         CURLOPT_CUSTOMREQUEST => 'GET',
+			       CURLOPT_USERPWD, "nelius@frogfoot.com:Jy0x[w0G-A",    // iris-dev			       			       
+
+			       CURLOPT_HTTPHEADER => array(
+							         'Cookie: {{Session Cookie}}'
+							       ),
+			       ));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+
+
+
+die;
 
 
 echo "Start.\n";
-
-
-//$URL = "https://iris.frogfoot.net/iris/api2/api/graphs?search.graphtype=snipsLatency&search.basetag.like=%25".$tag."%25";
-//echo $URL."\n";
-//die();
-
-
-//--- test basic Iris API
-$tag = "CXNK000CE9D9";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
